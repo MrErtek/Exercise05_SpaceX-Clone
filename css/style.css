@@ -114,13 +114,21 @@ section {
     font-size: 25px;
     font-weight: 300;
     margin-bottom: 5px;
+    animation: fadeInUp 0.5s ease-in-out;
 }
 
 .section-inner h2 {
     font-size: 50px;
     font-weight: 900;
     margin-bottom: 20px;
+    animation: fadeInUp 0.5s ease-in-out 0.2s;
+    animation-fill-mode: both;
 }
+
+.section-inner a {
+    animation: fadeInUp 0.5s ease-in-out 0.4s;
+}
+
 
 /* Background images */
 
@@ -166,4 +174,45 @@ section {
 
 .btn:hover .hover {
     transform: translateY(0);
+}
+
+.scroll-arrow {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateY(-50%);
+    animation: fadeBounce 5s infinite;
+}
+
+
+
+/* Animations */
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeBounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
